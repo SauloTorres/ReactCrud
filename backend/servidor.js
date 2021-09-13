@@ -19,7 +19,7 @@ app.get('/usuarios',(req, res) => {
     res.send(bancoDeDados.getUsuarios())
 })
 app.get('/usuarios/:id', (req, res) =>{
-    res.send(bancoDeDados.getProduto(req.params.id))
+    res.send(bancoDeDados.getUsuario(req.params.id))
 })
 
 app.post('/usuarios',(req,res) =>{
@@ -32,17 +32,17 @@ app.post('/usuarios',(req,res) =>{
    //res.redirect("https://google.com")
 })
 
-app.put('/usuarios/:id',(req,res,next) =>{
-    const produto = bancoDeDados.salvarProduto({
+app.put('/usuarios/:id',(req,res) =>{
+    const produto = bancoDeDados.salvarUsuario({
         id: req.params.id,
-        nome: req.body.nome,
-        preco: req.body.preco
+        email: req.body.email,
+        password: req.body.password
     })
     res.send(produto)
 })
 
-app.delete('/usuarios/:id',(req,res,next) =>{
-    const produto = bancoDeDados.excluirProduto(req.params.id)
+app.delete('/usuarios/:id',(req,res) =>{
+    const produto = bancoDeDados.excluirUsuario(req.params.id)
     res.send(produto)
 })
 
