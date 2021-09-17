@@ -1,7 +1,8 @@
 import React, { useState, useEffect}  from 'react'
-import { Modal, ModalHeader, ModalFooter,ModalBody,Button, Label, Input, Card, Table } from 'reactstrap';
+import { Modal, Container, ModalFooter,ModalBody,Button, Label, Input, Card, Table } from 'reactstrap';
 import Axios from 'axios'
 import './Form.css';
+import Layout from './layout'
 
 let contItens = 0
 
@@ -16,7 +17,7 @@ function Formulario(){
     const toggle = () => {
         setModal(!modal)
         //setUserEmail('')
-        //setUserPassword('')
+        //setUserPassword(''
     };
 
 
@@ -72,6 +73,7 @@ function Formulario(){
     },[contItens])
         
     return(
+    <Layout>
     <div>
         <h3>Novo Usuário</h3>
         <Card>
@@ -139,7 +141,8 @@ function Formulario(){
             </div>
             </Card>
             </Modal>               
-        </div>                   
+        </div>
+        </Layout>                   
     );
 
 }

@@ -1,15 +1,16 @@
 import './App.css';
 import React from 'react'
-import Formulario from './components/form';
-import { Container } from 'reactstrap';
+import { HashRouter} from 'react-router-dom'
+import Routes from './Routes'
+
 
 function App() {
-  return (    
+  return (
+    <HashRouter>  
     <div>
-      <Container className="mt-4">
-      <Formulario />
-      </Container>
+      <Routes />
     </div>
+    </HashRouter>  
   );
 }
 
